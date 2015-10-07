@@ -9,5 +9,17 @@ public class EmailRecipient {
 
 	@Id private String id;
 
+	private String headers;
+
+	public String getHeaders() {
+		return headers;
+	}
+
+	public void setHeaders(String headers) {
+		this.headers = headers;
+	}
+
+	
+	
 
 }
