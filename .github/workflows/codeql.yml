@@ -44,6 +44,7 @@ jobs:
         category: "/language:${{matrix.language}}"
         output: java.sarif
         checkout_path: ./report 
+        
     - name: Upload sarif result
       uses: github/codeql-action/upload-sarif@v3
       with:
