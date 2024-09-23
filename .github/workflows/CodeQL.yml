@@ -30,12 +30,7 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
-          name: report.sarif
-          path: report.sarif
+          output: report.sarif
+          checkout_path: report.sarif
           
-      # step 4
-      - name: Download report
-        uses: actions/download-artifact@v3
-        with: 
-          name: report.sarif
             
