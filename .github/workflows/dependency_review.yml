@@ -21,6 +21,8 @@ jobs:
           fail-on-severity: moderate
           deny-licenses: LGPL-2.0, BSD-2-Clause
           fail-on-scopes: development
+          base-ref: ${{ github.event.pull_request.base.sha || github.event.before || github.sha }}
+          head-ref: ${{ github.event.pull_request.head.sha || github.sha }}
           
       - name: Show Review Results
         run: |
