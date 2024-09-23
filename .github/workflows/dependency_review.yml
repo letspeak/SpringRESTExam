@@ -1,10 +1,10 @@
 name: 'Dependency Review'
-on: [pull_request]
-  #push: 
-  #  branches: master
+on: #[pull_request]
+  push: 
+    branches: master
   
 permissions:
-  contents: read
+  contents: write
 
 
 
@@ -14,9 +14,21 @@ jobs:
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
+        
       - name: Dependency Review
-        uses: actions/dependency-review-action@v3
+        uses: actions/dependency-review-action@v4
         with:
           fail-on-severity: moderate
           deny-licenses: LGPL-2.0, BSD-2-Clause
-          #fail-on-scopes: development
+          fail-on-scopes: development
+          
+      - name: Show Review Results
+        run: |
+          echo "Licenses Denied: ${{ steps.dependency-review.outputs.licenses_denied }}"
+          echo "Vulnerabilities: ${{ steps.dependency-review.outputs.vulnerabilities }}"
+      
+      - name: 'Report'
+        if: ${{ failure() }}
+        run: |
+          echo "Review failed. Licenses Denied: ${{ steps.dependency-review.outputs.licenses_denied }}"
+          echo "Vulnerabilities: ${{ steps.dependency-review.outputs.vulnerabilities }}"`
