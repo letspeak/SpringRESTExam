@@ -45,7 +45,7 @@ jobs:
         output: java.sarif
         checkout_path: ./report 
     - name: Upload sarif result
-    - uses: github/codeql-action/upload-sarif@v3
+      uses: github/codeql-action/upload-sarif@v3
       with:
         # Path to SARIF file relative to the root of the repository
         sarif_file: java.sarif        
