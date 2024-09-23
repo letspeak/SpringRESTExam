@@ -18,7 +18,7 @@ jobs:
       - name: Dependency Review
         uses: actions/dependency-review-action@v4
         with:
-          fail-on-severity: moderate
+          fail-on-severity: low
           deny-licenses: LGPL-2.0, BSD-2-Clause
           fail-on-scopes: development
           base-ref: ${{ github.event.pull_request.base.sha || github.event.before || github.sha }}
