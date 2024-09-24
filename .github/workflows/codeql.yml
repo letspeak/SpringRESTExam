@@ -47,7 +47,7 @@ jobs:
         output: ../analyze-results
 
     - name: debug
-      run: echo ${{steps.codeql-action.output}}
+      run: echo "${{steps.codeql-action}}"
         
     - name: download result  
       uses: actions/upload-artifact@v4
