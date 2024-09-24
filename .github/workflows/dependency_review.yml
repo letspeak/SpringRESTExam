@@ -23,6 +23,11 @@ jobs:
           fail-on-scopes: development
           base-ref: ${{ github.event.pull_request.base.sha || github.event.before || github.sha }}
           head-ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Debug
+        run: |
+          echo "See : ${{ steps.dependency-review }}"
+
           
       - name: Show Review Results
         run: |
