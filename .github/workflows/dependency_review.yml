@@ -1,7 +1,7 @@
 name: 'Dependency Review'
-on: #[pull_request]
-  push: 
-    branches: master
+on: [pull_request]
+  #push: 
+  #  branches: master
   
 permissions:
   contents: write
@@ -21,10 +21,10 @@ jobs:
           fail-on-severity: low
           deny-licenses: LGPL-2.0, BSD-2-Clause
           fail-on-scopes: development
-          #base-ref: ${{ github.event.pull_request.base.sha || github.event.before || github.sha }}
-          #head-ref: ${{ github.event.pull_request.head.sha || github.event.before || github.sha }}
-          base-ref: ${{ github.event.create.base.sha || github.sha }}
-          head-ref: ${{ github.event.create.head.sha || github.sha }}
+          base-ref: ${{ github.event.pull_request.base.sha || github.event.before || github.sha }}
+          head-ref: ${{ github.event.pull_request.head.sha || github.event.before || github.sha }}
+          #base-ref: ${{ github.event.create.base.sha || github.sha }}
+          #head-ref: ${{ github.event.create.head.sha || github.sha }}
 
           
       - name: Show Review Results
