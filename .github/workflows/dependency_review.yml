@@ -1,7 +1,7 @@
 name: 'Dependency Review'
-on: [pull_request]
-  #push: 
-  #  branches: master
+on: #[pull_request]
+  push: 
+    branches: master
   
 permissions:
   contents: write
@@ -29,6 +29,7 @@ jobs:
           
       - name: Show Review Results
         run: |
+          echo "Just Top lvl : ${{ steps.dependency-review }}"
           echo "Licenses Denied: ${{ steps.dependency-review.outputs.licenses_denied }}"
           echo "Vulnerabilities: ${{ steps.dependency-review.outputs.vulnerabilities }}"
       
