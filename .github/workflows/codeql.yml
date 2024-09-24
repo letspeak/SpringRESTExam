@@ -53,6 +53,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: codeql-output.sarif
-        path: ${{steps.codeql-action.output}}
+        path: /home/runner/work/SpringRESTExam/analyze-results/
         
 
