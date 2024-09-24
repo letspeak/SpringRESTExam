@@ -21,8 +21,8 @@ jobs:
           fail-on-severity: low
           deny-licenses: LGPL-2.0, BSD-2-Clause
           fail-on-scopes: development
-          base-ref: ${{ github.event.create.base.sha || github.sha }}
-          head-ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          base-ref: ${{ github.event.pull_request.base.sha || github.event.sha || github.sha }}
+          head-ref: ${{ github.event.pull_request.head.sha || github.event.sha || github.sha }}
 
 
           
