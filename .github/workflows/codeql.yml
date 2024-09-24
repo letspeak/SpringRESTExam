@@ -45,9 +45,5 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
         checkout_path: /results
-        fail-on-scopes: development
- 
-    - name: 'Report'
-      run: |
-        #echo "Review failed. Licenses Denied: ${{ steps.codeql-action.outputs.licenses_denied }}"
-        echo "Vulnerabilities: ${{ steps.codeql-action.outputs.vulnerabilities }}"
+        matrix: true
+
