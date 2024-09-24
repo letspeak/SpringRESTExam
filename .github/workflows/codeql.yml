@@ -45,5 +45,7 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
         checkout_path: /results
-        matrix: true
+        add-snippets: true
+
+        
 
