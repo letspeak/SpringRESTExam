@@ -46,8 +46,8 @@ jobs:
         category: "/language:${{matrix.language}}"
         output: ../analyze-results
 
-    - name: debug
-      run: echo "${{steps.codeql-action}}"
+    #- name: debug
+    #  run: echo "${{steps.codeql-action}}"
         
     - name: download result  
       uses: actions/upload-artifact@v4
