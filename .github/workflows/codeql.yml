@@ -44,8 +44,10 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
-        checkout_path: /results
-        add-snippets: true
-
+        
+    - uses: actions/upload-artifact@v3
+      with:
+        name: codeql-output.sarif
+        path: ${{steps.codeql-action.checkout_path}}
         
 
