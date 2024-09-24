@@ -52,7 +52,7 @@ jobs:
     - name: download result  
       uses: actions/upload-artifact@v4
       with:
-        name: codeql-output.sarif
+        name: java.sarif
         path: /home/runner/work/SpringRESTExam/analyze-results/
         
 
