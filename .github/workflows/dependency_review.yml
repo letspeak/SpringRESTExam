@@ -26,7 +26,7 @@ jobs:
 
       - name: Debug
         run: |
-          echo "See : ${{ steps.dependency-review }}"
+          echo "See : ${{ steps.dependency-review.outputs }}"
 
           
       - name: Show Review Results
