@@ -26,10 +26,12 @@ jobs:
           #base-ref: ${{ github.event.create.base.sha || github.sha }}
           #head-ref: ${{ github.event.create.head.sha || github.sha }}
 
+      - run: |
+         echo "Run, Build Application using script"
+         ./location_of_script_within_repo/buildscript.sh
           
       - name: Show Review Results
         run: |
-          echo "Just Top lvl : ${{ steps.dependency-review }}"
           echo "Licenses Denied: ${{ steps.dependency-review.outputs.licenses_denied }}"
           echo "Vulnerabilities: ${{ steps.dependency-review.outputs.vulnerabilities }}"
       
