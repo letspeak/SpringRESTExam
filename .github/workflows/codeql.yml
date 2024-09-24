@@ -47,10 +47,10 @@ jobs:
         output: ../analyze-results
 
     - name: debug
-      run: echo ${{steps.codeql-action}}
+      run: echo ${{steps.codeql-action.output}}
         
     - name: download result  
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: codeql-output.sarif
         path: /home/runner/work/SpringRESTExam/analyze-results/
