@@ -49,6 +49,6 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: codeql-output.sarif
-        path: ${{steps.codeql-action.outputs.output}}
+        path: ${{steps.codeql-action.output}}
         
 
